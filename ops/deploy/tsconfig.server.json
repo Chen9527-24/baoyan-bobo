@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": false,
+    "rootDir": "../..",
+    "outDir": "../../dist/server",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "node"
+    ],
+    "sourceMap": false,
+    "declaration": false
+  },
+  "include": [
+    "../../apps/server/src/**/*.ts",
+    "../global-memory.ts",
+    "../trial-invites.ts",
+    "../feedback-reports.ts",
+    "../content-manager.ts",
+    "../service-status.ts",
+    "../admin-access.ts"
+  ]
+}

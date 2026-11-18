@@ -1,0 +1,36 @@
+.phone-experience-panel { min-width: 0; }
+.phone-experience-plan { display: grid; gap: 10px; margin: 18px 0; }
+.phone-experience-plan article { padding: 13px; border: 1px solid #dce5dc; border-radius: 14px; background: #fafbf7; min-width: 0; }
+.phone-experience-plan article.recorded { background: #edf4e8; }
+.phone-experience-plan strong { display: flex; align-items: center; gap: 7px; font-size: 14px; }
+.phone-experience-plan p { margin: 8px 0 0; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.phone-experience-progress { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin: 16px 0; font-size: 14px; }
+.phone-experience-progress span { font-size: 12px; color: #75816f; }
+.phone-experience-status { display: flex; align-items: flex-start; gap: 8px; padding: 13px; background: #eef4e9; border-radius: 14px; font-size: 13px; line-height: 1.7; }
+.phone-experience-status svg { flex-shrink: 0; margin-top: 2px; }
+.phone-experience-form { display: grid; gap: 12px; min-width: 0; margin: 18px 0; }
+.phone-experience-form .field { min-width: 0; margin: 0; }
+.phone-experience-form select, .phone-experience-form textarea, .phone-experience-form .field input { width: 100%; min-width: 0; box-sizing: border-box; }
+.phone-experience-form textarea { resize: vertical; }
+.phone-experience-options { display: grid; gap: 8px; min-width: 0; padding: 12px; border: 1px solid #dce5dc; border-radius: 14px; margin: 0; }
+.phone-experience-options legend { padding-inline: 4px; font-size: 14px; font-weight: 600; }
+.phone-experience-options legend span { display: block; font-size: 12px; font-weight: 400; color: #75816f; }
+.phone-experience-options label { min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 8px 10px; box-sizing: border-box; background: #f7f9f4; border-radius: 10px; font-size: 14px; cursor: pointer; }
+.phone-experience-options label.selected { background: #dce9d7; color: #355342; }
+.phone-experience-options input, .phone-experience-confirm input { accent-color: #537864; }
+.phone-experience-detail { border: 1px solid #dce5dc; padding: 12px; border-radius: 14px; min-width: 0; }
+.phone-experience-detail summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-size: 14px; }
+.phone-experience-detail .field { margin-top: 12px; }
+.phone-experience-confirm { min-height: 44px; align-items: flex-start; font-size: 13px; line-height: 1.7; }
+.phone-experience-confirm input { flex-shrink: 0; margin-top: 4px; }
+.phone-experience-records { margin: 18px 0; }
+.phone-experience-records summary { min-height: 44px; line-height: 1.7; }
+.phone-experience-records article { border-top: 1px solid #e2e7dc; padding: 12px 0; font-size: 13px; overflow-wrap: anywhere; }
+.phone-experience-records article p { margin: 7px 0 0; line-height: 1.7; }
+.phone-experience-note { white-space: pre-wrap; }
+.phone-experience-delete { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.phone-experience-delete p { flex-basis: 100%; }
+@media (max-width: 360px) { .phone-experience-options, .phone-experience-detail { padding: 8px; } }
+
+.phone-experience-panel input[type=radio], .phone-experience-panel input[type=checkbox] { width: 16px; height: 16px; min-height: 16px; flex: 0 0 16px; padding: 0; margin: 0; }
+.phone-experience-panel .field input, .phone-experience-panel select { font-size: 16px; }

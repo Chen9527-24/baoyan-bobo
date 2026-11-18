@@ -1,0 +1,49 @@
+.memory-panel .memory-section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 10px}
+.memory-panel .memory-section-heading h3{display:flex;align-items:center;gap:8px;font-size:17px;line-height:1.5;color:#536b4e}
+.memory-panel .memory-section-heading h3>span{font-size:12px;background:#edf1e3;padding:2px 8px;border-radius:8px}
+.memory-panel .memory-daily-section{border-bottom:1px solid #e4e9dc;padding-bottom:20px}
+.memory-panel .memory-daily-day{font-size:11px;line-height:1.7;color:#79866e;margin:10px 0}
+.memory-panel .memory-daily-card{background:#f4f7ed;border:1px solid #dce5d2;border-radius:16px;padding:18px;margin-top:12px;min-width:0}
+.memory-panel .memory-daily-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;color:#647d56}
+.memory-panel .memory-daily-heading strong{display:flex;align-items:center;gap:7px;font-size:15px}
+.memory-panel .memory-daily-heading>span{font-size:11px;line-height:1.6;color:#7a8970}
+.memory-panel .memory-daily-overview{font-size:14px;line-height:1.9;color:#536b4e;margin-top:14px;overflow-wrap:anywhere}
+.memory-panel .memory-daily-topics,.memory-panel .memory-daily-concerns,.memory-panel .memory-daily-moods{margin-top:15px}
+.memory-panel .memory-daily-moods h4{display:flex;align-items:center;gap:6px}
+.memory-panel .memory-daily-moods>p{font-size:12px;line-height:1.8;color:#7c856f}
+.memory-panel .memory-daily-moods .memory-daily-coverage{font-size:11px;margin-top:7px}
+.memory-panel .memory-daily-card h4{font-size:12px;line-height:1.7;color:#687b5b;margin-bottom:6px;font-weight:500}
+.memory-panel .memory-daily-tags{display:flex;gap:6px;flex-wrap:wrap}
+.memory-panel .memory-daily-tags>span{display:inline-flex;background:#e6edda;color:#5e7650;border:1px solid #d7e2c9;border-radius:8px;padding:5px 9px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.memory-panel .memory-daily-tags.concerns>span{background:#f3eddd;color:#856f4e;border-color:#e5d9bd}
+.memory-panel .memory-daily-tags.moods>span{background:#fff1df;color:#8c6a43;border-color:#efdec4}
+.memory-panel .memory-daily-concerns>p{font-size:12px;line-height:1.8;color:#7c856f}
+.memory-panel .memory-daily-time{font-size:10px;line-height:1.7;color:#7b8772;margin-top:13px;overflow-wrap:anywhere}
+.memory-panel .memory-daily-card>.text-button{margin-top:8px;min-height:44px;font-size:11px}
+.memory-panel .memory-daily-delete{margin-top:12px;border-top:1px solid #e0e7d7;padding-top:12px}
+.memory-panel .memory-daily-delete>p{font-size:12px;line-height:1.8;color:#8b7056;margin-bottom:8px}
+.memory-panel .memory-daily-empty{margin-top:12px;padding:18px;border:1px dashed #dce5d2;border-radius:14px;background:#fafbf6;color:#75836a;font-size:13px;line-height:1.8}
+.memory-panel .memory-daily-empty strong{font-weight:500;display:block;margin-bottom:5px;color:#637858}
+.memory-panel .memory-daily-empty p{font-size:12px;line-height:1.8}
+.memory-panel .memory-daily-history{margin-top:14px}
+.memory-panel .memory-daily-history>summary{min-height:44px;padding:10px 0;font-size:13px;line-height:1.8;color:#637c54;cursor:pointer}
+.memory-panel .auto-memory-status{padding:12px 14px;background:#f5f7ee;border:1px solid #e2e8d8;border-radius:12px;margin-top:10px}
+.memory-panel .auto-memory-status .helper{margin:0;line-height:1.9;color:#738468}
+@media(max-width:760px){.memory-panel .memory-section-heading h3{font-size:16px}.memory-panel .memory-daily-card{padding:14px}.memory-panel .memory-daily-heading>span{font-size:10px}.memory-panel .segmented button{font-size:11px}.memory-panel .memory-daily-tags>span{font-size:12px}.memory-panel .memory-daily-delete .inline-actions{gap:8px;flex-wrap:wrap}}
+
+/* Parent daily view: keep essential content visible and put reference details behind one disclosure. */
+.parent-content .parent-low-frequency,.memory-panel .memory-explanation{margin-top:20px;border-top:1px solid #e4e9dc;padding-top:4px}
+.parent-content .parent-low-frequency>summary,.memory-panel .memory-explanation>summary{min-height:44px;padding:12px 0;font-size:14px;line-height:1.6;font-weight:500;color:#637858;cursor:pointer}
+.parent-content .parent-low-frequency>summary:focus-visible,.memory-panel .memory-explanation>summary:focus-visible{outline:2px solid #728e68;outline-offset:3px;border-radius:4px}
+.parent-content .parent-account-details .account-overview-card{margin-top:10px}
+.parent-content .parent-caption-setting{margin-bottom:22px}
+.memory-panel .memory-explanation h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:15px;color:#536b4e;margin:16px 0 8px}
+.memory-panel .memory-explanation h3>span{font-size:12px;font-weight:400}
+.memory-panel.memory-overview-preview .memory-daily-card{margin-top:0}
+.memory-panel.memory-overview-preview .memory-daily-overview{margin-top:0}
+.memory-panel .memory-preview-detail{display:flex;align-items:baseline;gap:10px;font-size:13px;line-height:1.8;margin-top:10px;overflow-wrap:anywhere;color:#67775d}
+.memory-panel .memory-preview-detail>strong{flex-shrink:0;font-size:12px;font-weight:500;color:#536b4e}
+.memory-panel .memory-open-button{min-height:44px;margin-top:8px;gap:8px}
+.memory-panel.memory-overview-preview .memory-daily-time{display:block}
+.memory-panel.memory-overview-preview .memory-daily-coverage{font-size:11px;line-height:1.8;color:#7c856f;margin-top:6px}
+.memory-daily-detail{font-size:11px;color:#728166;margin:0 0 8px;line-height:1.7;overflow-wrap:anywhere}
