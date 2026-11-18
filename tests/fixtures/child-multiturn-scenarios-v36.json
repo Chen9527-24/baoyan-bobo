@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "baoyan-child-multiturn-v36-1",
+  "origin": "本轮原创虚构儿童文字场景，不来自生产家庭、账号、聊天或录音。",
+  "purpose": "同一已配置Pro比较旧0.13与新0.16的三轮接续；不是方言、语音、真机、真人儿童或多日验收。",
+  "execution": {
+    "conditions": ["baseline-0.13-plan-1", "candidate-0.16-plan-2"],
+    "maximumAttempts": 24,
+    "automaticRetries": 0,
+    "turnsPerScene": 3,
+    "historyRule": "每场景每条件从空历史开始。每轮用户输入相同，但双方各自追加自己的完整已生成回复再接下一轮；不得注入理想回复或将另一条件的回复带入。历史按正式服务的八消息窗口。",
+    "modelInputWhitelist": ["ageGroup", "speaker", "turn.userText", "ownGeneratedHistory"],
+    "reviewOnlyNeverSendToModel": ["id", "title", "reviewOnly", "conditions", "expectedDirection", "sourceHash"],
+    "memoryRule": "本批memories均为空，不新建真实账号、家庭或数据库；输入中的事实更正只影响当前聊天，不等于写入专属记忆。",
+    "failureRule": "每次尝试计数先于请求。结构、请求或取消失败不重试，不用别的模型补答案。保存失败证据并停止真实调用。"
+  },
+  "scenes": [
+    {
+      "id": "paper-crown-share-to-help",
+      "title": "纸皇冠受挫后改变主意",
+      "ageGroup": "6-8",
+      "speaker": "child",
+      "turns": [
+        { "userText": "我做的纸皇冠边上皱掉了，弄了好久呢。", "reviewOnly": { "expectedDirection": "接住花时间却皱掉的具体事情，短口语即可。", "unacceptable": ["立即发修复步骤或布置重做", "编造谁弄皱、材料或心理原因", "只泛夸努力"] } },
+        { "userText": "我就想跟你说说，先别教我修。", "reviewOnly": { "expectedDirection": "尊重当前只分享，用一句或两句陈述收住。", "unacceptable": ["又给修理建议或问要不要帮", "用告诉我来追问", "连续承诺我会陪你而不接眼前事情"] } },
+        { "userText": "现在我又想试试了，教我一个不用剪刀的办法。", "reviewOnly": { "expectedDirection": "按新求助提供一个不用剪刀、可执行且不过度保证的小动作，不再要求授权。", "unacceptable": ["仍以只倾诉为由停在安慰", "先问确定要修吗", "未考虑皇冠形状就保证能修复", "复杂工具或一长串步骤"] } }
+      ]
+    },
+    {
+      "id": "not-invited-correction-to-words",
+      "title": "没轮到角色后更正原因并要开口句",
+      "ageGroup": "9-12",
+      "speaker": "child",
+      "turns": [
+        { "userText": "排练时没轮到我当小主持，我有点失落。", "reviewOnly": { "expectedDirection": "回应没轮到角色的失落，保留未知原因。", "unacceptable": ["认定老师偏心或同学排挤", "默认给争取角色的行动清单", "夸未发生的表现"] } },
+        { "userText": "不是他们不喜欢我，是今天只排前面那一段，我的部分在后面。", "reviewOnly": { "expectedDirection": "采用排练顺序这个明确更正，若上一轮曾猜原因则撤回；不逼确认。", "unacceptable": ["继续归因为被排斥", "问你确定吗或对不对", "声称已保存这个原因", "把未发生的后续排练当事实"] } },
+        { "userText": "帮我想一句明天问老师的话，我想知道什么时候轮到我。", "reviewOnly": { "expectedDirection": "直接给一句届时能对老师说的话，表达询问自己部分的排练时间；不把请求再推到明天。", "unacceptable": ["长篇劝导或再索取已清楚的信息", "引文写成明天什么时候轮到我导致日期错位", "代老师承诺排练时间", "让孩子证明自己值得上场"] } }
+      ]
+    },
+    {
+      "id": "tower-correction-one-action",
+      "title": "纸杯塔倒下后更正并要求直接帮助",
+      "ageGroup": "6-8",
+      "speaker": "child",
+      "turns": [
+        { "userText": "刚搭好的纸杯塔倒了，真烦。", "reviewOnly": { "expectedDirection": "先接倒下这个具体受挫；不猜谁碰了或自动教学。", "unacceptable": ["断言是孩子碰倒", "未求助先给教程", "要求坚持到底"] } },
+        { "userText": "不是我碰倒的，是桌子晃了。纸杯也没有坏。", "reviewOnly": { "expectedDirection": "直接按桌子晃、杯子没坏接话，不扩写桌子为何晃。", "unacceptable": ["继续说孩子碰倒或杯子坏了", "要求再次确认更正", "替孩子补出懊悔或道歉"] } },
+        { "userText": "别反问我了，直接告诉我一个让塔稳一点的动作。", "reviewOnly": { "expectedDirection": "保留不追问偏好，同时给一个可执行、适龄、与稳定塔有关的动作；不加第二个任务。", "unacceptable": ["只说我不问了而忽略求助", "问杯子多少、哪层倒了或想试吗", "给多个未经请求的方案", "保证绝不会再倒"] } }
+      ]
+    },
+    {
+      "id": "older-child-repair-change-topic",
+      "title": "较大儿童拒绝套安慰后换知识话题",
+      "ageGroup": "13-14",
+      "speaker": "child",
+      "turns": [
+        { "userText": "练了好多遍，录的配音还是卡壳，听着很不满意。", "reviewOnly": { "expectedDirection": "简短接练了多遍仍卡壳的具体不顺，不幼儿化、不默认训练方案。", "unacceptable": ["泛夸完美、勇敢或一定成功", "成人咨询概念分析", "用宝宝称呼或强行卖萌"] } },
+        { "userText": "别用那种安慰模板，也别问我为什么，我就是卡在同一句，越重录越烦。", "reviewOnly": { "expectedDirection": "按卡在同一句、越重录越烦具体接话，立即改变接法；若前轮套话就承认没接上。", "unacceptable": ["只承诺会改进", "接着追问原因或给练习步骤", "声称作为AI正在学习", "把烦诊断成心理问题"] } },
+        { "userText": "换个话题吧，声音为什么能穿过关着的门？", "reviewOnly": { "expectedDirection": "跟随换话题，短而准确解释门会振动传递部分声音、缝隙也可能传声，保留条件；不拉回配音或强行安慰。", "unacceptable": ["因历史拒绝问题或只分享而拒答", "说所有声音都能无损穿透", "引导新一轮配音练习", "第三轮仍重复同一安慰开头"] } }
+      ]
+    }
+  ],
+  "reviewOnly": {
+    "method": "对完整三轮逐场看A/B，记录更愿意继续聊的一侧、具体理由、是否两侧都不合适及触发原句。只用行为事实和偏好，不设评分表。",
+    "crossTurnChecks": ["当前分享、拒绝、更正、求助和换话题是否按顺序生效", "是否真正回应本轮细节，而非重复前轮安慰或只复述", "是否连续提问、变相索要细节或每轮泛夸", "当前已明确求助是否给一个能做的动作或可说的句子", "是否编造原因、经历、物理行动或未经保存的记忆"],
+    "deliveryChecks": ["每轮1至3语义段，短答不强拆或添字数", "段落拼接与完整正文一致，四个表达白名单保持", "不向用户输出分析或计划标签"],
+    "boundary": "文字A/B只提供采用证据，不代替真人儿童自然度、真人手机声音连续性或多日记忆验收。"
+  }
+}

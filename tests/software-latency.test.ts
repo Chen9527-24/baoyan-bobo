@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import request from 'supertest';
+import {randomUUID} from 'node:crypto';
+import {createApp} from '../apps/server/src/app.js';
+const origin='http://localhost:5173';
+const body={pin:'123456',nickname:'虚构计时',ageGroup:'6-8',sessionMinutes:10,dailyMinutes:20,consent:true};
+const post=(agent:any,path:string,value:any={})=>agent.post(path).set('Origin',origin).send(value);
+test('first-audio measurements require current same-family reply, are bounded and once per reply',async t=>{
+ const app=createApp({dataPath:':memory:',env:{}});t.after(()=>app.locals.close());const a=request.agent(app),b=request.agent(app);
+ await post(a,'/api/setup',body).expect(201);await post(b,'/api/setup',body).expect(201);
+ const call=(await post(a,'/api/calls',{operationId:randomUUID()}).expect(201)).body;
+ const turn=(await post(a,`/api/calls/${call.id}/turn`,{text:'今天我折了纸船',operationId:randomUUID()}).expect(200)).body;
+ const path=`/api/calls/${call.id}/latency`;
+ await post(b,path,{replyId:turn.replyId,milliseconds:1234}).expect(404);
+ await post(a,path,{replyId:turn.replyId,milliseconds:90001}).expect(400);
+ await post(a,path,{replyId:turn.replyId,milliseconds:1234,text:'unexpected-content'}).expect(400);
+ await post(a,path,{replyId:turn.replyId,milliseconds:1234}).expect(200);
+ await post(a,path,{replyId:turn.replyId,milliseconds:9999}).expect(200);
+ await post(a,`/api/calls/${call.id}/cancel`).expect(200);
+ await post(a,path,{replyId:turn.replyId,milliseconds:1500}).expect(409);
+ await post(a,'/api/parent/unlock',{pin:body.pin}).expect(200);await post(b,'/api/parent/unlock',{pin:body.pin}).expect(200);
+ const first=(await a.get('/api/parent/software/overview').expect(200)).body;
+ const second=(await b.get('/api/parent/software/overview').expect(200)).body;
+ assert.equal(first.service.calls,1);assert.equal(first.service.p50Ms,1234);assert.equal(second.service.calls,0);
+});
