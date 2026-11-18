@@ -1,0 +1,14 @@
+.image-turn-entry { min-height: 44px; gap: 6px; flex-shrink: 0; padding: 10px 13px; }
+.image-turn-draft { display: grid; gap: 12px; min-width: 0; }
+.image-turn-draft .field { margin: 0; min-width: 0; }
+.image-turn-draft textarea { width: 100%; min-width: 0; box-sizing: border-box; resize: vertical; }
+.image-turn-file { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; pointer-events: none; }
+.image-turn-preview { margin: 0; padding: 10px; border-radius: 16px; background: #f1f5eb; text-align: center; min-width: 0; }
+.image-turn-preview img { display: block; max-width: 100%; max-height: 230px; width: auto; height: auto; margin: auto; border-radius: 8px; object-fit: contain; }
+.image-turn-preview figcaption { margin: 8px 0 0; color: #65775f; font-size: 12px; line-height: 1.6; }
+.image-turn-empty { border: 1px dashed #becbbb; border-radius: 16px; padding: 22px 12px; text-align: center; color: #72866b; }
+.image-turn-empty p { margin: 8px 0 0; font-size: 13px; }
+.image-turn-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.image-turn-actions .button { min-height: 44px; max-width: 100%; white-space: normal; }
+.image-turn-privacy { margin: 0; font-size: 12px; line-height: 1.7; color: #75816f; overflow-wrap: anywhere; }
+@media (max-width: 360px) { .image-turn-entry { padding-inline: 10px; } .image-turn-actions { gap: 6px; } .image-turn-actions .button { padding-inline: 12px; } }

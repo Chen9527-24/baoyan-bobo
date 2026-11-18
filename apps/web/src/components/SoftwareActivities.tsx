@@ -1,0 +1,12 @@
+import { useEffect, useRef, useState } from 'react';
+import { BookOpen, GraduationCap } from 'lucide-react';
+import { api, messageOf } from '../lib/api';
+import type { SoftwareCatalog } from '../lib/types';
+import { Modal } from './Modal';
+
+export function SoftwareActivities({initialTab='story',onClose,onSelect}:{initialTab?:'story'|'learning';onClose:()=>void;onSelect:(kind:'story'|'learning',storyId?:string,topic?:string)=>Promise<void>}){
+ const[catalog,setCatalog]=useState<SoftwareCatalog|null>(null);const[error,setError]=useState('');const[busy,setBusy]=useState(false);const[tab,setTab]=useState<'story'|'learning'>(initialTab);const selecting=useRef(false);
+ useEffect(()=>{const controller=new AbortController();void api<SoftwareCatalog>('/software/catalog',{signal:controller.signal}).then(setCatalog).catch(err=>{if(!controller.signal.aborted)setError(messageOf(err));});return()=>controller.abort();},[]);
+ const select=(kind:'story'|'learning',id:string)=>{if(selecting.current)return;selecting.current=true;setBusy(true);onClose();void onSelect(kind,kind==='story'?id:undefined,kind==='learning'?id:undefined);};
+ return <Modal title={tab==='story'?'选一个喜欢的故事':'今天一起学什么？'} onClose={onClose}><div className="activity-tabs" role="tablist" aria-label="陪伴活动"><button role="tab" aria-selected={tab==='story'} className={`button ${tab==='story'?'primary':'ghost'}`} onClick={()=>setTab('story')}><BookOpen size={18}/>听故事</button><button role="tab" aria-selected={tab==='learning'} className={`button ${tab==='learning'?'primary':'ghost'}`} onClick={()=>setTab('learning')}><GraduationCap size={18}/>一起学</button></div><p className="helper">选好内容再开始，随时可以回到聊天。故事和练习使用普通话。</p>{error?<p className="error-note" role="alert">{error}</p>:null}{!catalog&&!error?<p role="status">正在准备…</p>:null}<div className="activity-list">{tab==='story'?catalog?.stories.map(item=><button className="activity-card" key={item.id} disabled={busy} onClick={()=>void select('story',item.id)}><strong>{item.title}</strong><span>{item.theme} · 约 {Math.max(1,Math.ceil(item.durationSeconds/60))} 分钟</span></button>):catalog?.learningTopics.map(item=><button className="activity-card" key={item.id} disabled={busy} onClick={()=>void select('learning',item.id)}><strong>{item.title}</strong><span>{item.description??'一步一步想清楚，遇到听错的题目可以修改。'}</span></button>)}</div>{catalog&&!(tab==='story'?catalog.stories.length:catalog.learningTopics.length)?<p>内容还在准备中，先和宝妍聊聊天吧。</p>:null}</Modal>;
+}

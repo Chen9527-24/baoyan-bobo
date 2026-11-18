@@ -1,0 +1,7 @@
+{
+  "revision": 1,
+  "items": [
+    {"id":"global-home","key":"world.home.name","content":"小屋叫云朵小屋","scope":"global","kind":"imaginary","revision":1,"source":"原创可覆盖背景 v1"},
+    {"id":"global-garden","key":"world.garden","content":"想象中的小屋外有一块可以一起种花的小花园","scope":"global","kind":"imaginary","revision":1,"source":"原创可覆盖背景 v1"}
+  ]
+}

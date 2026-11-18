@@ -1,0 +1,9 @@
+import {useEffect,useRef,useState} from 'react';
+import {api,post,remove,messageOf} from '../lib/api';
+export function GuardianPanel({onBusyChange}:{onBusyChange:(busy:boolean)=>void}){
+ const [items,setItems]=useState<{id:string;username:string}[]>([]);const [link,setLink]=useState<{code:string;expiresAt:string}>();const [busy,setBusy]=useState(false);const [error,setError]=useState('');const mounted=useRef(true);const locked=useRef(false);
+ useEffect(()=>{mounted.current=true;void api<{items:{id:string;username:string}[]}>('/parent/guardians').then(v=>{if(mounted.current)setItems(v.items);}).catch(err=>{if(mounted.current)setError(messageOf(err));});return()=>{mounted.current=false;};},[]);
+ useEffect(()=>{if(busy)onBusyChange(true);return()=>{if(busy)onBusyChange(false);};},[busy,onBusyChange]);
+ const run=async(id?:string)=>{if(locked.current)return;locked.current=true;setBusy(true);setError('');try{if(id){await remove('/parent/guardians/'+id);if(mounted.current)setItems(v=>v.filter(i=>i.id!==id));}else{const result=await post<{code:string;expiresAt:string}>('/parent/guardians/link');if(mounted.current)setLink(result);}}catch(err){if(mounted.current)setError(messageOf(err));}finally{locked.current=false;if(mounted.current)setBusy(false);}};
+ return <section className="subform"><h3>关联家长</h3><p className="helper">由你生成关联码，交给要加入的家长。对方先注册独立账号，再输入关联码。此码会授予孩子资料的家长管理权限，请只交给你同意加入的人。</p><button className="button secondary" disabled={busy} onClick={()=>void run()}>生成家长关联码</button>{link?<div className="account-recovery-result"><code>{link.code}</code><p>仅可使用一次，10分钟有效；生成新码会使旧码失效。</p></div>:null}{items.map(item=><div className="account-status-card" key={item.id}><strong>{item.username}</strong><button className="button ghost" disabled={busy} onClick={()=>void run(item.id)}>解除家长关联</button></div>)}{!items.length?<p className="helper">暂无其他关联家长。</p>:null}{error?<p role="alert" className="error-note">{error}</p>:null}</section>;
+}

@@ -1,0 +1,3 @@
+import { useEffect, useRef } from 'react';
+import { X } from 'lucide-react';
+export function Modal({title,onClose,children,closeDisabled=false}:{title:string;closeDisabled?:boolean;onClose:()=>void;children:React.ReactNode}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{ref.current?.showModal();return()=>ref.current?.close();},[]);return <dialog ref={ref} className="modal" onCancel={event=>{event.preventDefault();if(!closeDisabled)onClose();}} aria-label={title}><div className="modal-header"><h2>{title}</h2><button className="icon-button" disabled={closeDisabled} onClick={onClose} aria-label="关闭"><X size={21}/></button></div>{children}</dialog>;}

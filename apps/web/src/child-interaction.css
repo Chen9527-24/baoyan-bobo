@@ -1,0 +1,231 @@
+/* Child-facing chat only. Parent/account forms retain their own layout. */
+.companion-shell {background:radial-gradient(ellipse at 12% 6%,#fff3d6 0,transparent 45%),radial-gradient(ellipse at 94% 75%,#e8f4ef 0,transparent 45%),#f8f7f0}
+.one-screen-home.child-home .companion-card {border:2px solid #e1e9db;box-shadow:0 8px 28px #385e4310;border-radius:28px;background:#fffefb}
+.one-screen-home.child-home .companion-summary .stage-heading h1 {font-weight:700}
+.one-screen-home.child-home .conversation-top {border-bottom:0}
+.one-screen-home.child-home .companion-dock {background:#fffefb;border-top:1px solid #e8eadf}
+.one-screen-home.child-home .child-composer {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0 0 10px}
+.one-screen-home.child-home .child-composer-choice {display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-width:0;min-height:78px;padding:8px;border:2px solid transparent;border-radius:18px;font-size:15px;font-weight:650;line-height:1.25;background:#edf4ee;color:#456c58;box-shadow:none}
+.one-screen-home.child-home .child-composer-choice svg {width:27px;height:27px;stroke-width:2}
+.one-screen-home.child-home .child-composer-choice.image-turn-entry {background:#fff1dc;color:#865926}
+.one-screen-home.child-home .child-composer-choice.text-choice {background:#eaf1fc;color:#4d6d98}
+.one-screen-home.child-home .child-composer-choice.selected {border-color:currentColor;box-shadow:inset 0 0 0 2px #ffffff9c}
+.one-screen-home.child-home .child-composer-choice small {font-size:10px;font-weight:400}
+.one-screen-home.child-home .child-composer-choice:disabled {opacity:.5}
+.one-screen-home.child-home .child-voice-mode-selector {border:0;padding:0;margin:0 0 9px;display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
+.one-screen-home.child-home .child-voice-mode-selector legend {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.one-screen-home.child-home .voice-mode-button {display:flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:7px;border:2px solid #e3e9df;border-radius:15px;background:#f5f7f0;text-align:left;color:#66755f}
+.one-screen-home.child-home .voice-mode-button.selected {background:#e5f0df;border-color:#739966;color:#365b39}
+.voice-mode-icon {display:grid;place-items:center;flex:none}
+.voice-mode-copy,.hold-button-copy {display:flex;flex-direction:column;gap:1px}
+.one-screen-home.child-home .voice-mode-copy strong {font-size:14px;line-height:1.4}.one-screen-home.child-home .voice-mode-copy small {font-size:11px;line-height:1.35;font-weight:400}
+.one-screen-home.child-home .voice-turn-input.compact .hold-to-talk-button,.image-voice-draft .hold-to-talk-button {min-height:76px;padding:10px;border-radius:22px;background:#587e61;gap:13px;box-shadow:0 4px 0 #3e6447;color:white}
+.one-screen-home.child-home .hold-button-icon,.image-voice-draft .hold-button-icon {display:grid;place-items:center;width:45px;height:45px;border-radius:50%;background:#ffffff20}
+.one-screen-home.child-home .hold-button-copy strong,.image-voice-draft .hold-button-copy strong {font-size:19px;line-height:1.5;font-weight:650}
+.one-screen-home.child-home .hold-button-copy small,.image-voice-draft .hold-button-copy small {font-size:12px;line-height:1.4;font-weight:400;opacity:.9}
+.one-screen-home.child-home .voice-turn-input.compact .listening-feedback {padding:4px 7px;border:0;background:transparent;margin:5px 0 0}
+.one-screen-home.child-home .voice-turn-input.compact .listening-feedback-top {justify-content:center;gap:6px;min-height:18px}
+.one-screen-home.child-home .voice-turn-input.compact .listening-feedback-top strong {font-size:11px}
+.one-screen-home.child-home .voice-turn-input.compact .listening-feedback-top>span {display:none}
+.one-screen-home.child-home .voice-turn-input.compact .input-level {max-width:180px;height:4px;margin:4px auto 0;background:#e8eedd}
+.one-screen-home.child-home .voice-turn-input.compact .finish-utterance,.one-screen-home.child-home .compact-resume {min-height:58px;padding:8px;margin:7px 0 0;border-radius:19px;font-size:17px;background:#587e61;color:white;border:0}
+.one-screen-home.child-home .active-input {margin-bottom:0}
+.one-screen-home.child-home .call-controls {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-top:8px;margin-top:7px;border-top:0;min-height:48px}
+.one-screen-home.child-home .call-control {display:flex;flex-direction:row;justify-content:center;gap:6px;min-height:48px;padding:6px;border-radius:14px;font-size:12px;background:#f0f3e9}
+.one-screen-home.child-home .call-control svg {width:20px;height:20px}
+.one-screen-home.child-home .call-control.hangup {background:#fbe9e3;color:#9c5a49}
+.one-screen-home.child-home .child-chat-tools {display:flex;justify-content:space-between;align-items:center;gap:6px;margin:4px 0 0}
+.one-screen-home.child-home .child-chat-tools .mode-entry {min-height:44px;width:auto;margin:0;padding:4px 7px;background:transparent;border:0;gap:5px}
+.one-screen-home.child-home .child-chat-tools .mode-entry-copy {display:flex;flex-direction:row;gap:5px;align-items:center}
+.one-screen-home.child-home .child-chat-tools .mode-entry-copy>span {display:none}
+.one-screen-home.child-home .child-chat-tools .mode-entry-copy strong {font-size:11px}
+.one-screen-home.child-home .child-chat-tools .input-settings {min-width:60px;min-height:44px;padding:5px;font-size:11px}
+.one-screen-home.child-home .message-form {gap:8px;border-radius:18px;padding:6px;background:#edf2fa;border-color:#d9e2f2}
+.one-screen-home.child-home .message-form input {min-width:0;min-height:50px;font-size:16px;background:transparent}
+.one-screen-home.child-home .message-form button {min-height:50px;min-width:50px;border-radius:15px;background:#5679a7}
+.one-screen-home.child-home .transcript-card {background:#edf3fc;border:0;border-radius:19px 19px 6px 19px;margin-left:16px;text-align:left;padding:12px 15px}
+.one-screen-home.child-home .reply-card {background:#edf4e7;border:0;border-radius:19px 19px 19px 6px;margin-right:16px;text-align:left;padding:12px 15px}
+.one-screen-home.child-home .reply-author {display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600}
+.one-screen-home.child-home .transcript-card>p,.one-screen-home.child-home .reply-card .reply-paragraphs p {font-size:16px;line-height:1.75;color:#354b40}
+.one-screen-home.child-home .turn-heading h2 {font-weight:650}.one-screen-home.child-home .session-facts {margin-top:9px;font-size:10px}
+.one-screen-home.child-home .child-launcher .chat-activity {border-radius:24px;background:#5c805f;min-height:92px;box-shadow:0 5px 0 #3f6347}
+.one-screen-home.child-home .child-launcher .chat-activity strong {font-size:23px;font-weight:700}
+.one-screen-home.child-home .child-launcher .chat-activity small {font-size:12px}
+.one-screen-home.child-home .child-launcher .activity-symbol {border-radius:18px;background:#ffffff20}
+.one-screen-home.child-home .child-start-extras {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.one-screen-home.child-home .child-start-choice {display:flex;align-items:center;gap:11px;min-height:84px;padding:13px;border-radius:22px;text-align:left}
+.one-screen-home.child-home .child-start-choice>span {display:flex;flex-direction:column;gap:3px;min-width:0}
+.one-screen-home.child-home .child-start-choice strong {font-size:18px;font-weight:650}.one-screen-home.child-home .child-start-choice small {font-size:11px}
+.one-screen-home.child-home .photo-start {background:#fff0da;color:#865926}.one-screen-home.child-home .text-start {background:#e9f0fc;color:#4d6d98}
+.one-screen-home.child-home .home-language-row .mode-entry {border:0;background:transparent}
+/* Photo source choice and a voice question remain a single local draft. */
+.image-source-choices {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 16px}
+.image-source-choice {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:110px;border:2px solid #e5ddc7;border-radius:22px;background:#fff1da;color:#805b27;font-size:19px;font-weight:650;padding:14px}
+.image-source-choice:last-child {background:#eaf2fd;border-color:#dce6f4;color:#4c6c96}
+.image-source-choice svg {width:34px;height:34px}
+.image-question-modes {display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
+.image-question-modes>button {display:flex;justify-content:center;align-items:center;gap:7px;min-height:52px;border:2px solid #e3e8db;border-radius:16px;font-size:15px;background:#f6f7ef}
+.image-question-modes>button.selected {border-color:#6e965e;background:#e8f0e0}
+.image-voice-draft {padding:13px;border-radius:19px;background:#f1f5e9}
+.image-voice-status {font-size:13px;text-align:center;margin:8px 0}
+.image-voice-actions {display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px}
+.image-voice-actions audio {width:100%;height:46px}
+.image-voice-draft .hold-instructions {font-size:11px;margin:8px 0;line-height:1.6}
+.image-turn-draft .image-turn-empty {display:none}
+.image-turn-draft .image-turn-preview img {max-height:210px;object-fit:contain}
+.image-turn-draft .image-turn-privacy {font-size:11px;line-height:1.7}
+.image-turn-draft .image-turn-actions .button {min-height:52px;border-radius:16px;font-size:15px}
+@media(max-width:760px){
+ .companion-shell {padding:0 12px}.companion-shell .app-header {min-height:62px;padding-top:4px;padding-bottom:4px;border-bottom:0}
+ .companion-shell .brand small {display:none}.companion-shell .brand strong {font-size:21px;font-weight:700}.companion-shell .brand strong span {font-size:20px}
+ .companion-shell .brand-flower {width:34px;height:34px}.companion-shell .header-actions {gap:3px}.companion-shell .parent-entry,.companion-shell .feedback-entry {min-height:48px;border-radius:14px;padding:6px;gap:4px}
+ .companion-shell>.one-screen-home.child-home {gap:8px;padding-top:4px}.one-screen-home.child-home .companion-summary {flex-basis:116px;height:116px}
+ .one-screen-home.child-home .companion-card {border-radius:25px}.one-screen-home.child-home .conversation-top {padding:8px 13px;min-height:34px}
+ .one-screen-home.child-home .conversation-scroll {padding:10px 13px;min-height:60px}.one-screen-home.child-home .companion-dock {padding:10px 12px 8px;max-height:none;overflow:visible;display:block}
+ .companion-shell .one-screen-home.child-home.is-active .companion-summary {flex-basis:42px;height:42px}
+ .one-screen-home.child-home .companion-dock:has(.message-form):has(.compact-resume) {display:block}
+ .one-screen-home.child-home .turn-heading h2 {font-size:18px}.one-screen-home.child-home .resting-summary .turn-heading h2 {font-size:21px}
+ .one-screen-home.child-home .transcript-card,.one-screen-home.child-home .reply-card {margin-top:10px}.one-screen-home.child-home .child-start-choice {gap:8px;padding:10px;min-height:78px}.one-screen-home.child-home .child-start-choice svg {width:28px;height:28px}
+ .one-screen-home.child-home .child-start-choice strong {font-size:17px}.one-screen-home.child-home .child-start-choice small {font-size:10px}
+ .companion-shell .modal {padding:16px;max-height:calc(var(--companion-viewport-height,100dvh) - 20px)}
+}
+@media(max-width:760px) and (max-height:650px){
+ .companion-shell .app-header {min-height:54px}.companion-shell .one-screen-home.child-home.is-active .companion-summary {display:none}.one-screen-home.child-home .companion-summary {flex-basis:76px;height:76px}
+ .one-screen-home.child-home .child-composer {gap:7px;margin-bottom:7px}.one-screen-home.child-home .child-composer-choice {min-height:60px;border-radius:15px;font-size:13px;gap:2px;padding:5px}
+ .one-screen-home.child-home .child-composer-choice svg {width:24px;height:24px}.one-screen-home.child-home .voice-mode-button {min-height:50px}.one-screen-home.child-home .child-voice-mode-selector {margin-bottom:6px}
+ .one-screen-home.child-home .voice-turn-input.compact .hold-to-talk-button {min-height:62px}.one-screen-home.child-home .hold-button-copy strong {font-size:17px}
+ .one-screen-home.child-home .companion-dock {padding-top:7px;padding-bottom:5px}.one-screen-home.child-home .child-launcher .chat-activity {min-height:76px}.one-screen-home.child-home .child-start-choice {min-height:66px}
+ .one-screen-home.child-home .child-launcher .chat-activity strong {font-size:21px}.one-screen-home.child-home .call-controls {margin-top:4px;padding-top:5px}
+}
+@media(max-width:760px) and (max-height:500px){
+ .one-screen-home.child-home.is-resting .child-launcher .chat-activity {min-height:64px;padding-top:7px;padding-bottom:7px}
+ .one-screen-home.child-home.is-resting .child-launcher {gap:4px}
+ .one-screen-home.child-home.is-resting .child-start-extras {margin-top:0}
+ .one-screen-home.child-home.is-resting .child-start-choice {min-height:54px;padding-top:8px;padding-bottom:8px}
+ .one-screen-home.child-home.is-resting .home-language-row .mode-entry {min-height:44px}
+ .one-screen-home.child-home .companion-summary {display:none}.one-screen-home.child-home .conversation-top {display:none}.one-screen-home.child-home .conversation-scroll {min-height:28px;padding-top:5px;padding-bottom:5px}
+ .one-screen-home.child-home .child-chat-tools {display:none}.one-screen-home.child-home .voice-turn-input.compact .listening-feedback {display:none}
+ .one-screen-home.child-home .companion-dock {padding-top:5px}.one-screen-home.child-home .child-composer-choice {min-height:48px;flex-direction:row;font-size:12px}.one-screen-home.child-home .child-composer-choice svg {width:22px;height:22px}
+ .one-screen-home.child-home .voice-turn-input.compact .hold-to-talk-button,.one-screen-home.child-home .compact-resume,.one-screen-home.child-home .voice-turn-input.compact .finish-utterance {min-height:48px;padding:5px}
+ .one-screen-home.child-home .voice-turn-input.compact .hold-button-icon {width:30px;height:30px}.one-screen-home.child-home .voice-turn-input.compact .hold-button-copy strong {font-size:15px}.one-screen-home.child-home .voice-turn-input.compact .hold-button-copy small {font-size:10px}
+ .one-screen-home.child-home .companion-dock:has(.compact-resume) .active-input>.voice-turn-input {display:block}.one-screen-home.child-home .companion-dock:has(.compact-resume) .hold-to-talk {display:none}
+}
+@container companion-screen (max-height:500px){
+ .one-screen-home.child-home.is-resting .child-launcher .chat-activity {min-height:64px;padding-top:7px;padding-bottom:7px}
+ .one-screen-home.child-home.is-resting .child-launcher {gap:4px}
+ .one-screen-home.child-home.is-resting .child-start-extras {margin-top:0}
+ .one-screen-home.child-home.is-resting .child-start-choice {min-height:54px;padding-top:8px;padding-bottom:8px}
+ .one-screen-home.child-home.is-resting .home-language-row .mode-entry {min-height:44px}
+ .one-screen-home.child-home .conversation-top,.one-screen-home.child-home .child-chat-tools,.one-screen-home.child-home .voice-turn-input.compact .listening-feedback {display:none}
+ .one-screen-home.child-home .companion-dock {max-height:none;overflow:visible;padding-top:5px;display:block}.one-screen-home.child-home .child-composer-choice {min-height:48px;flex-direction:row;font-size:12px}.one-screen-home.child-home .child-composer-choice svg {width:22px;height:22px}
+ .one-screen-home.child-home .voice-turn-input.compact .hold-to-talk-button,.one-screen-home.child-home .compact-resume,.one-screen-home.child-home .voice-turn-input.compact .finish-utterance {min-height:48px;padding:5px}
+ .one-screen-home.child-home .companion-dock:has(.compact-resume) .active-input>.voice-turn-input {display:block}.one-screen-home.child-home .companion-dock:has(.compact-resume) .hold-to-talk {display:none}
+}
+@media(prefers-reduced-motion:reduce){.one-screen-home.child-home button {transition:none}.one-screen-home.child-home .waiting-motif span {animation:none}}
+
+.one-screen-home.child-home .companion-dock:has(.compact-resume) .hold-to-talk{display:none}
+
+.image-turn-draft:has(.image-turn-preview) .image-source-choices{margin:6px 0 8px;gap:8px}
+.image-turn-draft:has(.image-turn-preview) .image-source-choice{min-height:54px;flex-direction:row;padding:6px;border-radius:16px;font-size:16px;gap:8px}
+.image-turn-draft:has(.image-turn-preview) .image-source-choice svg{width:26px;height:26px}
+.image-turn-draft:has(.image-turn-preview)>.helper{display:none}
+.image-turn-draft .image-turn-preview{margin:8px 0;padding:8px}
+.image-turn-draft .image-turn-preview img{max-height:150px}
+.image-turn-draft .image-turn-preview figcaption{font-size:10px;margin-top:5px}
+.image-turn-draft .image-voice-hold{min-height:66px;font-size:17px;border-radius:18px}
+.image-turn-draft .image-turn-privacy{margin:10px 0;color:#74806b}
+.image-turn-draft .image-turn-privacy summary{min-height:40px;display:flex;align-items:center;font-size:11px;cursor:pointer}
+.image-turn-draft .image-turn-privacy p{font-size:11px}
+@media(max-height:650px){.image-turn-draft .image-turn-preview img{max-height:100px}.image-turn-draft .image-source-choice{min-height:82px}}
+
+/* Give mobile chat more reading space without changing input behavior. */
+@media(max-width:760px), (orientation:landscape) and (max-height:500px){
+ .companion-call-shell>.app-header{min-height:48px}
+ .companion-shell .one-screen-home.child-home.is-active .companion-summary{flex-basis:32px;height:32px;grid-template-columns:minmax(0,1fr) 32px}
+ .one-screen-home.child-home.is-active .companion-summary .stage-heading h1{font-size:16px}
+ .one-screen-home.child-home.is-active .companion-summary .stage-heading p{display:none}
+ .one-screen-home.child-home.is-active .companion-summary .portrait-scene{width:32px;height:32px}
+ .one-screen-home.child-home.is-active .companion-summary .avatar-wrap{height:36px;width:30px}
+ .one-screen-home.child-home.is-active .conversation-top{min-height:24px;padding:4px 11px}
+ .one-screen-home.child-home.is-active .conversation-scroll{min-height:72px;padding:8px 12px;align-items:stretch}
+ .one-screen-home.child-home.is-active .turn-summary{text-align:center}
+ .one-screen-home.child-home.is-active .turn-heading{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px}
+ .one-screen-home.child-home.is-active .turn-heading h2{font-size:15px;line-height:1.5}
+ .one-screen-home.child-home.is-active .turn-badge{margin:0;padding:2px 5px}
+ .one-screen-home.child-home.is-active .state-subtitle{font-size:11px;line-height:1.5;margin:3px 0 0}
+ .one-screen-home.child-home.is-active .session-facts{margin-top:6px}
+ .one-screen-home.child-home.is-active .transcript-card,.one-screen-home.child-home.is-active .reply-card{padding:10px 12px}
+ .one-screen-home.child-home.is-active .companion-dock{display:grid;grid-template-columns:minmax(0,1fr) 88px;grid-auto-rows:min-content;align-content:start;gap:5px 6px;padding:6px 8px;max-height:calc(100% - 72px);overflow-y:auto;overscroll-behavior-y:contain}
+ .one-screen-home.child-home.is-active .child-composer,.one-screen-home.child-home.is-active .active-input,.one-screen-home.child-home.is-active .compact-resume,.one-screen-home.child-home.is-active .speaker-simulation{grid-column:1/-1}
+ .one-screen-home.child-home.is-active .child-composer{gap:6px;margin:0}
+ .one-screen-home.child-home.is-active .child-composer-choice{min-height:44px;flex-direction:row;gap:6px;padding:5px 7px;border-radius:13px;font-size:13px}
+ .one-screen-home.child-home.is-active .child-composer-choice svg{height:21px;width:21px}
+ .one-screen-home.child-home.is-active .child-composer-choice small{display:none}
+ .one-screen-home.child-home.is-active .child-voice-mode-selector{gap:6px;margin:0 0 5px}
+ .one-screen-home.child-home.is-active .voice-mode-button{min-height:44px;padding:4px 5px;gap:5px;border-radius:12px}
+ .one-screen-home.child-home.is-active .voice-mode-icon svg{width:20px;height:20px}
+ .one-screen-home.child-home.is-active .voice-mode-copy{flex-direction:row;align-items:baseline;gap:4px;white-space:nowrap}
+ .one-screen-home.child-home.is-active .voice-mode-copy strong{font-size:13px}
+ .one-screen-home.child-home.is-active .voice-mode-copy small{font-size:10px}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .hold-to-talk-button{min-height:54px;padding:6px 8px;gap:9px;border-radius:16px;box-shadow:0 3px 0 #3e6447}
+ .one-screen-home.child-home.is-active .hold-button-icon{width:30px;height:30px}
+ .one-screen-home.child-home.is-active .hold-button-icon svg{width:22px;height:22px}
+ .one-screen-home.child-home.is-active .hold-button-copy strong{font-size:17px;line-height:1.3}
+ .one-screen-home.child-home.is-active .hold-button-copy small{font-size:10px;line-height:1.3}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .listening-feedback{padding:2px 4px;margin:3px 0 0}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .input-level{margin:2px auto 0;height:3px}
+ .one-screen-home.child-home.is-active .compact-resume,.one-screen-home.child-home.is-active .voice-turn-input.compact .finish-utterance{min-height:48px;margin:0;padding:6px 8px;font-size:16px;border-radius:15px}
+ .one-screen-home.child-home.is-active .message-form{margin:0;padding:4px}
+ .one-screen-home.child-home.is-active .message-form input{min-height:44px;font-size:16px}
+ .one-screen-home.child-home.is-active .message-form button{min-height:44px;min-width:44px}
+ .one-screen-home.child-home.is-active .call-controls{grid-column:1;gap:3px;margin:0;padding:0;min-height:44px;align-self:end}
+ .one-screen-home.child-home.is-active .call-control{min-height:44px;padding:3px 2px;gap:3px;font-size:11px;white-space:nowrap;border-radius:11px}
+ .one-screen-home.child-home.is-active .call-control span{min-width:0;white-space:normal;line-height:1.2}
+ .one-screen-home.child-home.is-active .call-control svg{width:16px;height:16px;flex:none}
+ .one-screen-home.child-home.is-active .child-chat-tools{grid-column:2;display:flex;gap:0;margin:0;padding:0;justify-content:flex-end;align-self:end}
+ .one-screen-home.child-home.is-active .child-chat-tools .mode-entry,.one-screen-home.child-home.is-active .child-chat-tools .input-settings{min-height:44px;min-width:44px;width:44px;padding:10px;margin:0;justify-content:center;position:relative}
+ .one-screen-home.child-home.is-active .child-chat-tools .mode-entry-copy,.one-screen-home.child-home.is-active .child-chat-tools .input-settings>span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ .one-screen-home.child-home.is-active .child-chat-tools .mode-entry>svg:last-child{display:none}
+ .one-screen-home.child-home.is-active .child-chat-tools .mode-entry>svg:first-child{width:19px;height:19px}
+}
+@media(max-width:760px) and (max-height:650px){
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .listening-feedback{display:none}
+}
+@media(max-width:760px) and (max-height:500px){
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .hold-to-talk-button,.one-screen-home.child-home.is-active .compact-resume,.one-screen-home.child-home.is-active .voice-turn-input.compact .finish-utterance{min-height:44px;padding:4px 7px}
+ .one-screen-home.child-home.is-active .conversation-scroll{min-height:60px}
+ .one-screen-home.child-home.is-active .companion-dock{padding:3px 8px;gap:3px 6px;max-height:calc(100% - 60px)}
+ .one-screen-home.child-home.is-active .child-voice-mode-selector{margin-bottom:3px}
+}
+@container companion-screen (max-height:500px){
+ .one-screen-home.child-home.is-active .companion-summary{display:none}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .listening-feedback{display:none}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .hold-to-talk-button,.one-screen-home.child-home.is-active .compact-resume,.one-screen-home.child-home.is-active .voice-turn-input.compact .finish-utterance{min-height:44px;padding:4px 7px}
+ .one-screen-home.child-home.is-active .conversation-scroll{min-height:60px}
+ .one-screen-home.child-home.is-active .companion-dock{padding:3px 8px;gap:3px 6px;max-height:calc(100% - 60px)}
+ .one-screen-home.child-home.is-active .child-voice-mode-selector{margin-bottom:3px}
+}
+
+/* Short landscape calls need the same bounded reading area as portrait calls. */
+@media(min-width:761px) and (max-height:500px){
+ .app-shell.companion-shell:has(.child-home.is-active){height:var(--companion-viewport-height,100dvh);min-height:0;max-width:none;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) max(12px,env(safe-area-inset-right,0px)) max(8px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+ .companion-call-shell>.app-header{flex:0 0 auto;min-height:48px;padding:2px 0;gap:8px}
+ .companion-call-shell .brand small,.companion-call-shell .header-actions .mode-badge{display:none}
+ .companion-call-shell .brand-flower{width:30px;height:30px}
+ .companion-call-shell .brand strong{font-size:20px}
+ .companion-call-shell>.one-screen-home.child-home.is-active{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:0;padding:4px 0 0}
+ .one-screen-home.child-home.is-active .companion-summary,.one-screen-home.child-home.is-active .conversation-top{display:none}
+ .one-screen-home.child-home.is-active>.companion-card{flex:1 1 0;min-height:0;display:flex;flex-direction:column;overflow:hidden;margin:0}
+ .one-screen-home.child-home.is-active .conversation-scroll{flex:1 1 0;min-height:60px;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;display:flex;flex-direction:column}
+ .one-screen-home.child-home.is-active .conversation-scroll>*{flex-shrink:0;max-width:100%;min-width:0}
+ .one-screen-home.child-home.is-active .state-indicator{display:none}
+ .one-screen-home.child-home.is-active .companion-dock{flex:0 0 auto;padding:3px 8px;gap:3px 6px;max-height:calc(100% - 60px)}
+ .one-screen-home.child-home.is-active .child-voice-mode-selector{margin-bottom:3px}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .hold-to-talk-button,.one-screen-home.child-home.is-active .compact-resume,.one-screen-home.child-home.is-active .voice-turn-input.compact .finish-utterance{min-height:44px;padding:4px 7px}
+ .one-screen-home.child-home.is-active .voice-turn-input.compact .listening-feedback{display:none}
+ .one-screen-home.child-home.is-active .hold-instructions{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ .one-screen-home.child-home.is-active .companion-dock:has(.compact-resume) .active-input>.voice-turn-input{display:block}
+ .companion-call-shell>.app-footer{display:flex;flex:0 0 auto;min-height:28px;padding:0;justify-content:center;gap:0}
+ .companion-call-shell>.app-footer>span,.companion-call-shell>.app-footer>p{display:none}
+ .companion-call-shell>.app-footer .icp-registration{min-height:28px;font-size:10px}
+}
